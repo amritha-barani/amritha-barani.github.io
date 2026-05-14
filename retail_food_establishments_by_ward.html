@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-87fe6a58b2b4d43dff6d19c39a6ceb5b"}, "mark": {"type": "bar"}, "encoding": {"opacity": {"condition": {"param": "param_2", "value": 1}, "value": 0.65}, "tooltip": [{"field": "WARD", "title": "Ward", "type": "ordinal"}, {"field": "total_food_establishments", "title": "Active Food Establishments", "type": "quantitative"}], "x": {"field": "WARD", "sort": "ascending", "title": "Chicago Ward", "type": "ordinal"}, "y": {"field": "total_food_establishments", "title": "Number of Active Retail Food Establishments", "type": "quantitative"}}, "height": 400, "params": [{"name": "param_2", "select": {"type": "point", "clear": "mouseout", "fields": ["WARD"], "on": "mouseover"}}], "title": "Where Are Chicago\u2019s Active Food Businesses Concentrated?", "width": 750, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-87fe6a58b2b4d43dff6d19c39a6ceb5b": [{"WARD": 1, "total_food_establishments": 2956}, {"WARD": 2, "total_food_establishments": 2850}, {"WARD": 3, "total_food_establishments": 1129}, {"WARD": 4, "total_food_establishments": 1665}, {"WARD": 5, "total_food_establishments": 1187}, {"WARD": 6, "total_food_establishments": 1186}, {"WARD": 7, "total_food_establishments": 609}, {"WARD": 8, "total_food_establishments": 1074}, {"WARD": 9, "total_food_establishments": 806}, {"WARD": 10, "total_food_establishments": 1015}, {"WARD": 11, "total_food_establishments": 2077}, {"WARD": 12, "total_food_establishments": 1106}, {"WARD": 13, "total_food_establishments": 1195}, {"WARD": 14, "total_food_establishments": 1406}, {"WARD": 15, "total_food_establishments": 1131}, {"WARD": 16, "total_food_establishments": 1027}, {"WARD": 17, "total_food_establishments": 859}, {"WARD": 18, "total_food_establishments": 1045}, {"WARD": 19, "total_food_establishments": 923}, {"WARD": 20, "total_food_establishments": 808}, {"WARD": 21, "total_food_establishments": 1134}, {"WARD": 22, "total_food_establishments": 1120}, {"WARD": 23, "total_food_establishments": 1271}, {"WARD": 24, "total_food_establishments": 827}, {"WARD": 25, "total_food_establishments": 2007}, {"WARD": 26, "total_food_establishments": 1353}, {"WARD": 27, "total_food_establishments": 3166}, {"WARD": 28, "total_food_establishments": 1891}, {"WARD": 29, "total_food_establishments": 1156}, {"WARD": 30, "total_food_establishments": 1231}, {"WARD": 31, "total_food_establishments": 1319}, {"WARD": 32, "total_food_establishments": 2314}, {"WARD": 33, "total_food_establishments": 1964}, {"WARD": 34, "total_food_establishments": 4242}, {"WARD": 35, "total_food_establishments": 1644}, {"WARD": 36, "total_food_establishments": 1337}, {"WARD": 37, "total_food_establishments": 1054}, {"WARD": 38, "total_food_establishments": 1154}, {"WARD": 39, "total_food_establishments": 1363}, {"WARD": 40, "total_food_establishments": 1588}, {"WARD": 41, "total_food_establishments": 2136}, {"WARD": 42, "total_food_establishments": 7002}, {"WARD": 43, "total_food_establishments": 2160}, {"WARD": 44, "total_food_establishments": 2776}, {"WARD": 45, "total_food_establishments": 1472}, {"WARD": 46, "total_food_establishments": 1457}, {"WARD": 47, "total_food_establishments": 2288}, {"WARD": 48, "total_food_establishments": 1545}, {"WARD": 49, "total_food_establishments": 1295}, {"WARD": 50, "total_food_establishments": 1580}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
