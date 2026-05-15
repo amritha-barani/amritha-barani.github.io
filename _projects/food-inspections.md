@@ -9,7 +9,7 @@ permalink: /projects/food-inspections/
 **Authors:** Amritha Barani, Anurag Karthikeyan
 
 [The Data](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5){: .btn .btn--primary}
-[The Analysis Notebook](https://github.com/amritha-barani/amritha-barani.github.io/blob/main/final_project_food_inspections.ipynb){: .btn .btn--primary}){: .btn .btn--primary}
+[The Analysis Notebook](https://github.com/amritha-barani/amritha-barani.github.io/blob/main/final_project_food_inspections.ipynb){: .btn .btn--primary}
 
 ## Main Visualization: Food Inspection Failure Rates by Facility Type
 <iframe src="{{ '/inspection_failure_rates.html' | relative_url }}" width="100%" height="575" frameborder="0"></iframe>
@@ -37,3 +37,5 @@ City of Chicago. “Food Inspections.” Chicago Data Portal. https://data.cityo
 City of Chicago. “Retail Food Establishments - Chicago.” Chicago Data Portal. https://data.cityofchicago.org/Community-Economic-Development/Retail-Food-Establishments-Chicago/efs4-hghf
 
 City of Chicago. “Grocery Store Status Map.” Chicago Data Portal. https://data.cityofchicago.org/Health-Human-Services/Grocery-Store-Status-Map/rish-pa6g
+
+Note: The main visualization, contextual visualizations, and extra credit visualization were created by the authors using Python, Pandas, and Altair. The code used to create these visualizations is available in the analysis notebook linked at the top of this page.
