@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300, "strokeWidth": 0}}, "data": {"name": "data-68079d8cf948780b48af83abbd609828"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "Zip", "title": "ZIP Code", "type": "nominal"}, {"field": "number_of_grocery_stores", "title": "Number of Open Grocery Stores", "type": "quantitative"}], "x": {"axis": {"labelFontSize": 12, "titleFontSize": 15}, "field": "number_of_grocery_stores", "title": "Number of Open Grocery Stores", "type": "quantitative"}, "y": {"axis": {"labelFontSize": 12, "titleFontSize": 15}, "field": "Zip", "sort": "-x", "title": "ZIP Code", "type": "nominal"}}, "height": 450, "title": {"text": "Where Open Grocery Stores Are Concentrated in Chicago", "fontSize": 20, "subtitleFontSize": 14, "anchor": "middle"}, "width": 750, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-68079d8cf948780b48af83abbd609828": [{"Zip": "60639", "number_of_grocery_stores": 14}, {"Zip": "60647", "number_of_grocery_stores": 14}, {"Zip": "60608", "number_of_grocery_stores": 13}, {"Zip": "60632", "number_of_grocery_stores": 10}, {"Zip": "60614", "number_of_grocery_stores": 10}, {"Zip": "60620", "number_of_grocery_stores": 9}, {"Zip": "60640", "number_of_grocery_stores": 9}, {"Zip": "60618", "number_of_grocery_stores": 9}, {"Zip": "60629", "number_of_grocery_stores": 9}, {"Zip": "60617", "number_of_grocery_stores": 8}, {"Zip": "60623", "number_of_grocery_stores": 7}, {"Zip": "60610", "number_of_grocery_stores": 7}, {"Zip": "60626", "number_of_grocery_stores": 6}, {"Zip": "60616", "number_of_grocery_stores": 6}, {"Zip": "60657", "number_of_grocery_stores": 6}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
