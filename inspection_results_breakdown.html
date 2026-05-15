@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-94d38a389eb2cbddfe15d7c6f7e33326"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "results", "title": "Inspection Result", "type": "nominal"}, {"field": "total_inspections", "title": "Total Inspections", "type": "quantitative"}], "x": {"field": "total_inspections", "title": "Number of Inspections", "type": "quantitative"}, "y": {"field": "results", "sort": "-x", "title": "Inspection Result", "type": "nominal"}}, "height": 400, "title": "What Results Do Chicago Food Inspections Usually Receive?", "width": 750, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-94d38a389eb2cbddfe15d7c6f7e33326": [{"results": "Pass", "total_inspections": 155749}, {"results": "Fail", "total_inspections": 57773}, {"results": "Pass W/ Conditions", "total_inspections": 45182}, {"results": "Out Of Business", "total_inspections": 20738}, {"results": "No Entry", "total_inspections": 13315}, {"results": "Not Ready", "total_inspections": 3944}, {"results": "Business Not Located", "total_inspections": 63}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
