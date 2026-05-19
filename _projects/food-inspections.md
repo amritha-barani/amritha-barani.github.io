@@ -8,9 +8,9 @@ permalink: /projects/food-inspections/
 
 **Authors:** Amritha Barani, Anurag Karthikeyan
 
-[The Data](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5){: .btn .btn--primary style="color: white;"}
+The dataset used for this project can be found here: [Food Inspections Data](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5).
 
-[The Analysis Notebook](https://github.com/amritha-barani/amritha-barani.github.io/blob/main/final_project_food_inspections.ipynb){: .btn .btn--primary style="color: white;"}
+The analysis notebook for this project can be found here: [Final Project Analysis Notebook](https://github.com/amritha-barani/amritha-barani.github.io/blob/main/final_project_food_inspections.ipynb). {: .btn .btn--primary style="color: white;"}
 
 ## Main Visualization: Food Inspection Failure Rates by Facility Type
 <iframe src="{{ '/inspection_failure_rates.html' | relative_url }}" width="100%" height="575" frameborder="0"></iframe>
