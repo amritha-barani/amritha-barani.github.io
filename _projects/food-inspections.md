@@ -16,10 +16,10 @@ permalink: /projects/food-inspections/
 <iframe src="{{ '/inspection_failure_rates.html' | relative_url }}" width="100%" height="575" frameborder="0"></iframe>
 
 ## Contextual Visualization 1: Active Retail Food Establishments by Ward
-<iframe src="{{ '/retail_food_establishments_by_ward.html' | relative_url }}" width="100%" height="525" frameborder="0"></iframe>
+<iframe src="{{ '/retail_food_establishments_by_ward (1).html' | relative_url }}" width="100%" height="525" frameborder="0"></iframe>
 
 ## Contextual Visualization 2: Open Grocery Stores by Zip Code
-<iframe src="{{ '/grocery_store_status_by_zip.html' | relative_url }}" width="100%" height="525" frameborder="0"></iframe>
+<iframe src="{{ '/grocery_store_status_by_zip (1).html' | relative_url }}" width="100%" height="525" frameborder="0"></iframe>
 
 ## Extra Credit Visualization: Overall Food Inspection Results
 
