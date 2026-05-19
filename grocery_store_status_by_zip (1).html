@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://data.cityofchicago.org/resource/unjd-c2ca.geojson", "format": {"type": "json", "property": "features"}}, "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_grocery_stores", "scale": {"scheme": "blues"}, "title": "Grocery Stores", "type": "quantitative"}, "tooltip": [{"field": "zip_string", "title": "ZIP Code", "type": "nominal"}, {"field": "total_grocery_stores", "title": "Grocery Stores", "type": "quantitative"}]}, "height": 500, "projection": {"type": "mercator"}, "title": "Grocery Stores by Chicago ZIP Code", "transform": [{"calculate": "toString(datum.properties.zip)", "as": "zip_string"}, {"lookup": "zip_string", "from": {"data": {"name": "data-f9720839e702043bb9fb61cd7a74d6c4"}, "key": "zip_string", "fields": ["total_grocery_stores"]}}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-f9720839e702043bb9fb61cd7a74d6c4": [{"Zip": 60601, "total_grocery_stores": 3, "zip_string": "60601"}, {"Zip": 60605, "total_grocery_stores": 1, "zip_string": "60605"}, {"Zip": 60607, "total_grocery_stores": 1, "zip_string": "60607"}, {"Zip": 60608, "total_grocery_stores": 10, "zip_string": "60608"}, {"Zip": 60609, "total_grocery_stores": 2, "zip_string": "60609"}, {"Zip": 60610, "total_grocery_stores": 5, "zip_string": "60610"}, {"Zip": 60611, "total_grocery_stores": 2, "zip_string": "60611"}, {"Zip": 60612, "total_grocery_stores": 1, "zip_string": "60612"}, {"Zip": 60613, "total_grocery_stores": 2, "zip_string": "60613"}, {"Zip": 60614, "total_grocery_stores": 6, "zip_string": "60614"}, {"Zip": 60615, "total_grocery_stores": 2, "zip_string": "60615"}, {"Zip": 60616, "total_grocery_stores": 5, "zip_string": "60616"}, {"Zip": 60617, "total_grocery_stores": 5, "zip_string": "60617"}, {"Zip": 60618, "total_grocery_stores": 3, "zip_string": "60618"}, {"Zip": 60619, "total_grocery_stores": 2, "zip_string": "60619"}, {"Zip": 60620, "total_grocery_stores": 4, "zip_string": "60620"}, {"Zip": 60622, "total_grocery_stores": 1, "zip_string": "60622"}, {"Zip": 60623, "total_grocery_stores": 6, "zip_string": "60623"}, {"Zip": 60624, "total_grocery_stores": 2, "zip_string": "60624"}, {"Zip": 60625, "total_grocery_stores": 3, "zip_string": "60625"}, {"Zip": 60626, "total_grocery_stores": 3, "zip_string": "60626"}, {"Zip": 60628, "total_grocery_stores": 2, "zip_string": "60628"}, {"Zip": 60629, "total_grocery_stores": 7, "zip_string": "60629"}, {"Zip": 60630, "total_grocery_stores": 2, "zip_string": "60630"}, {"Zip": 60631, "total_grocery_stores": 1, "zip_string": "60631"}, {"Zip": 60632, "total_grocery_stores": 6, "zip_string": "60632"}, {"Zip": 60634, "total_grocery_stores": 3, "zip_string": "60634"}, {"Zip": 60636, "total_grocery_stores": 1, "zip_string": "60636"}, {"Zip": 60637, "total_grocery_stores": 3, "zip_string": "60637"}, {"Zip": 60638, "total_grocery_stores": 3, "zip_string": "60638"}, {"Zip": 60639, "total_grocery_stores": 10, "zip_string": "60639"}, {"Zip": 60640, "total_grocery_stores": 5, "zip_string": "60640"}, {"Zip": 60641, "total_grocery_stores": 2, "zip_string": "60641"}, {"Zip": 60643, "total_grocery_stores": 2, "zip_string": "60643"}, {"Zip": 60644, "total_grocery_stores": 2, "zip_string": "60644"}, {"Zip": 60645, "total_grocery_stores": 2, "zip_string": "60645"}, {"Zip": 60646, "total_grocery_stores": 2, "zip_string": "60646"}, {"Zip": 60647, "total_grocery_stores": 13, "zip_string": "60647"}, {"Zip": 60649, "total_grocery_stores": 2, "zip_string": "60649"}, {"Zip": 60651, "total_grocery_stores": 2, "zip_string": "60651"}, {"Zip": 60653, "total_grocery_stores": 2, "zip_string": "60653"}, {"Zip": 60657, "total_grocery_stores": 2, "zip_string": "60657"}, {"Zip": 60659, "total_grocery_stores": 1, "zip_string": "60659"}, {"Zip": 60660, "total_grocery_stores": 1, "zip_string": "60660"}, {"Zip": 60661, "total_grocery_stores": 1, "zip_string": "60661"}, {"Zip": 60707, "total_grocery_stores": 2, "zip_string": "60707"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

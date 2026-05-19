@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"url": "https://data.cityofchicago.org/resource/p293-wvbd.geojson", "format": {"type": "json", "property": "features"}}, "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5}, "encoding": {"color": {"field": "total_food_establishments", "scale": {"scheme": "blues"}, "title": "Retail Food Establishments", "type": "quantitative"}, "tooltip": [{"field": "ward_string", "title": "Ward", "type": "nominal"}, {"field": "total_food_establishments", "title": "Retail Food Establishments", "type": "quantitative"}]}, "height": 500, "projection": {"type": "mercator"}, "title": "Retail Food Establishments by Chicago Ward", "transform": [{"calculate": "toString(datum.properties.ward)", "as": "ward_string"}, {"lookup": "ward_string", "from": {"data": {"name": "data-da0fb675ea5e8189006cde3252295e0a"}, "key": "ward_string", "fields": ["total_food_establishments"]}}], "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-da0fb675ea5e8189006cde3252295e0a": [{"WARD": 1, "total_food_establishments": 2956, "ward_string": "1"}, {"WARD": 2, "total_food_establishments": 2850, "ward_string": "2"}, {"WARD": 3, "total_food_establishments": 1129, "ward_string": "3"}, {"WARD": 4, "total_food_establishments": 1665, "ward_string": "4"}, {"WARD": 5, "total_food_establishments": 1187, "ward_string": "5"}, {"WARD": 6, "total_food_establishments": 1186, "ward_string": "6"}, {"WARD": 7, "total_food_establishments": 609, "ward_string": "7"}, {"WARD": 8, "total_food_establishments": 1074, "ward_string": "8"}, {"WARD": 9, "total_food_establishments": 806, "ward_string": "9"}, {"WARD": 10, "total_food_establishments": 1015, "ward_string": "10"}, {"WARD": 11, "total_food_establishments": 2077, "ward_string": "11"}, {"WARD": 12, "total_food_establishments": 1106, "ward_string": "12"}, {"WARD": 13, "total_food_establishments": 1195, "ward_string": "13"}, {"WARD": 14, "total_food_establishments": 1406, "ward_string": "14"}, {"WARD": 15, "total_food_establishments": 1131, "ward_string": "15"}, {"WARD": 16, "total_food_establishments": 1027, "ward_string": "16"}, {"WARD": 17, "total_food_establishments": 859, "ward_string": "17"}, {"WARD": 18, "total_food_establishments": 1045, "ward_string": "18"}, {"WARD": 19, "total_food_establishments": 923, "ward_string": "19"}, {"WARD": 20, "total_food_establishments": 808, "ward_string": "20"}, {"WARD": 21, "total_food_establishments": 1134, "ward_string": "21"}, {"WARD": 22, "total_food_establishments": 1120, "ward_string": "22"}, {"WARD": 23, "total_food_establishments": 1271, "ward_string": "23"}, {"WARD": 24, "total_food_establishments": 827, "ward_string": "24"}, {"WARD": 25, "total_food_establishments": 2007, "ward_string": "25"}, {"WARD": 26, "total_food_establishments": 1353, "ward_string": "26"}, {"WARD": 27, "total_food_establishments": 3166, "ward_string": "27"}, {"WARD": 28, "total_food_establishments": 1891, "ward_string": "28"}, {"WARD": 29, "total_food_establishments": 1156, "ward_string": "29"}, {"WARD": 30, "total_food_establishments": 1231, "ward_string": "30"}, {"WARD": 31, "total_food_establishments": 1319, "ward_string": "31"}, {"WARD": 32, "total_food_establishments": 2314, "ward_string": "32"}, {"WARD": 33, "total_food_establishments": 1964, "ward_string": "33"}, {"WARD": 34, "total_food_establishments": 4242, "ward_string": "34"}, {"WARD": 35, "total_food_establishments": 1644, "ward_string": "35"}, {"WARD": 36, "total_food_establishments": 1337, "ward_string": "36"}, {"WARD": 37, "total_food_establishments": 1054, "ward_string": "37"}, {"WARD": 38, "total_food_establishments": 1154, "ward_string": "38"}, {"WARD": 39, "total_food_establishments": 1363, "ward_string": "39"}, {"WARD": 40, "total_food_establishments": 1588, "ward_string": "40"}, {"WARD": 41, "total_food_establishments": 2136, "ward_string": "41"}, {"WARD": 42, "total_food_establishments": 7002, "ward_string": "42"}, {"WARD": 43, "total_food_establishments": 2160, "ward_string": "43"}, {"WARD": 44, "total_food_establishments": 2776, "ward_string": "44"}, {"WARD": 45, "total_food_establishments": 1472, "ward_string": "45"}, {"WARD": 46, "total_food_establishments": 1457, "ward_string": "46"}, {"WARD": 47, "total_food_establishments": 2288, "ward_string": "47"}, {"WARD": 48, "total_food_establishments": 1545, "ward_string": "48"}, {"WARD": 49, "total_food_establishments": 1295, "ward_string": "49"}, {"WARD": 50, "total_food_establishments": 1580, "ward_string": "50"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
